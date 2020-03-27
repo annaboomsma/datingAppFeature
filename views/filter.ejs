@@ -1,20 +1,41 @@
-<h1>What are you looking for?</h1>
-<form action="/" method="POST">
-    <fieldset>
-        <legend>Gender</legend>
-        <label for="men">Men</label>
-        <input id="men" type="radio" name="gender" value="men">
-        <label for="women">Women</label>
-        <input id="women" type="radio" name="gender" value="women">
-    </fieldset>
-    <fieldset>
-        <legend>Sexuality</legend>
-        <label for="straight">Straight</label>
-        <input id="straight" type="radio" name="sexuality" value="straight">
-        <label for="gay">Gay</label>
-        <input id="gay" type="radio" name="sexuality" value="straight">
-        <label for="bi">Bi-sexual</label>
-        <input id="bi" type="radio" name="sexuality" value="straight">
-    </fieldset>
-    <input type="submit" value="submit">
-</form>
+<!doctype html>
+
+<link rel="stylesheet" href="/static/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+    <header>
+        <!-- <button id="backbutton" href="" ></button> -->
+        <img id="logo" src="../static/images/logo.png" alt="logo luvely">
+    
+    </header>
+    <main class="normalmain">
+        <form action="/" method="POST">
+        <div class="form">
+            <h1>What are you looking for?</h1>
+            
+                <fieldset>
+                    <legend>Gender</legend>
+                    <input id="men" class="radio" type="radio" name="gender" value="men">
+                    <label for="men" class="label">Men</label>
+                    <input id="women" class="radio" type="radio" name="gender" value="woman">
+                    <label for="women" class="label">Women</label>
+                    
+                </fieldset>
+                <fieldset>
+                    <legend>Sexuality</legend>
+                    <input id="straight" class="radio" type="radio" name="sexuality" value="Straight">
+                    <label for="straight" class="label">Straight</label>
+                    <input id="gay" class="radio" type="radio" name="sexuality" value="Gay">
+                    <label for="gay" class="label">Gay</label>
+                    <input id="bi" class="radio" type="radio" name="sexuality" value="Bi-sexual">
+                    <label for="bi" class="label">Bi-sexual</label>
+                    
+                </fieldset>
+        </div>
+            <div class="submitButton">
+                <input id="next" type="submit" value="Filter!" >
+            </div>
+        </form>
+    </main>   
+</body>

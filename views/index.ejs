@@ -1,17 +1,32 @@
 <!doctype html>
 
+<link rel="stylesheet" href="/static/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <body>
-<h1> Results: </h1>
+  <header>
+    <!-- <button id="backbutton" href="" ></button> -->
+    <img id="logo" src="../static/images/logo.png" alt="logo luvely">
 
-<a href="/filter">Add filters</a>
+  </header>
+  <main class="normalmain">
+    <div class="form">
+      <div id="link">
+        <h1> Results: </h1>
+   
+        <a href="/filter">Add filters</a>
+      </div>
+      <article id="allpeople">
+    <% for (var index = 0; index < data.length; index++) { %>
+    
+        <article class="personTwee">
 
-<% for (var index = 0; index < data.length; index++) { %>
-
-  <section>
-    <h2> <%= data[index].firstName %> </h2>
-    <p> <%= data[index].sexuality %> </p>
-  </section>
-<% } %>
-
+          <h2> <%= data[index].firstName %> </h2>
+          <p> <%= data[index].sexuality %> </p>
+        </article>
+        
+      
+    <% } %>
+    </article>
+</main> 
 </body>

@@ -18,7 +18,7 @@
         "id" : "00003", 
         "firstName" : "Joep ", 
         "lastName" : "Pietersma ",
-        "gender" : "woman",
+        "gender" : "men",
         "age" : "21 years",
         "sexuality" : "Straight"
     },
@@ -26,7 +26,7 @@
         "id" : "00004", 
         "firstName" : "Sander ", 
         "lastName" : "Pietersma ",
-        "gender" : "woman",
+        "gender" : "men",
         "age" : "21 years",
         "sexuality" : "Gay"
     },
@@ -37,6 +37,46 @@
         "gender" : "woman",
         "age" : "21 years",
         "sexuality" : "Straight"
+    },
+    {
+        "id" : "00006", 
+        "firstName" : "Merel", 
+        "lastName" : "Pietersma ",
+        "gender" : "woman",
+        "age" : "21 years",
+        "sexuality" : "Bi-sexual"
+    },
+    {
+        "id" : "00007", 
+        "firstName" : "Fien", 
+        "lastName" : "Pietersma ",
+        "gender" : "woman",
+        "age" : "21 years",
+        "sexuality" : "Straight"
+    },
+    {
+        "id" : "00008", 
+        "firstName" : "Bob", 
+        "lastName" : "Pietersma ",
+        "gender" : "men",
+        "age" : "21 years",
+        "sexuality" : "Gay"
+    },
+    {
+        "id" : "00009", 
+        "firstName" : "Robby ", 
+        "lastName" : "Pietersma ",
+        "gender" : "men",
+        "age" : "21 years",
+        "sexuality" : "Bi-sexual"
+    },
+    {
+        "id" : "00010", 
+        "firstName" : "Daniëlle", 
+        "lastName" : "Pietersma ",
+        "gender" : "woman",
+        "age" : "21 years",
+        "sexuality" : "Gay"
     }
     
   ]

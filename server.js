@@ -5,6 +5,9 @@ const app = express()
 const port = 3000
 const path = require('path')
 const mongo = require('mongodb')
+const session = require('express-session')
+
+const TWO_HOURS = 1000 * 60 * 60 * 2
 
 require('dotenv').config()
 
@@ -26,6 +29,18 @@ mongo.MongoClient.connect(url, { useUnifiedTopology: true }, function(err, clien
 
 app.use('/static',express.static('static'))
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(session({
+    name: SESS_NAME,
+    resave: false,
+    saveUninitialized: false,
+    secret: SESS_SECRET,
+    cookie: {
+        maxAge: TWO_HOURS,
+        sameSite: true
+
+
+    }
+}))
 
 app.set('view engine' , 'ejs')
 
@@ -44,10 +59,12 @@ function filters(req,res){
 }
 
 function add(req,res){
-    // let genderFilter = req.body.gender
+    
     let sexualityFilter = req.body.sexuality
+    let genderFilter = req.body.gender
+    console.log(genderFilter)
 
-    db.collection('datingapp').find({sexuality: sexualityFilter}).toArray(done)
+    db.collection('datingapp').find({gender: genderFilter, sexuality: sexualityFilter}).toArray(done)
         function done(err, data){
             if (err){
                 next(err)
@@ -56,7 +73,9 @@ function add(req,res){
                 res.render('index.ejs', {data: data})
             }
         }
+     
 }
+
 
 // const genderChecked = document.querySelector('input[name=gender]:checked')
 // const sexualityChecked = document.querySelector('input[name=sexuality]:checked')

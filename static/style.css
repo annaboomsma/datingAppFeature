@@ -10,6 +10,7 @@ body{
 .normalmain{
     background-color: #FFFFFD;
     border-radius: 30px 30px 0px 0px;
+    min-height: 50rem;
 }
 
 .onderknop{
@@ -76,14 +77,14 @@ h1{
 
 fieldset{
     margin-top: 3rem;
-    height: 30rem;
+    height: 17rem;
     border: none;
     display: flex;
     flex-direction: column;
 
 }
 
-#form{
+.form{
     padding: 1.5rem 1.2rem 0rem 1.2rem;
 }
 
@@ -173,6 +174,7 @@ footer{
 }
 
 .submitButton{
+    margin-top: 4rem;
     background-color: #FFFFFD ;
     display: flex;
     justify-content: flex-end;
@@ -247,4 +249,44 @@ footer{
     margin-right: 0.5rem;
     background-color: rgba(255,255,253,.5);
     border-radius: 7px;
+}
+
+.personTwee{
+    margin-top: 2rem;
+    font-family: 'Montserrat';
+    background-color: #2945A0;
+    border-radius: 15px;
+    padding-top: 1.3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    width: 10rem;
+    height: 5rem;
+}
+
+.personTwee h2{
+    color: #FFFFFD;
+}
+.personTwee p{
+    background-color:#2945A0 ;
+    color: #FFFFFD;
+}
+
+#link{
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    font-family: 'Montserrat';
+    background-color: #53D0EC;
+    color: #FFFFFD;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+}
+
+#allpeople{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
