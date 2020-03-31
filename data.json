@@ -1,82 +1,112 @@
 [{
-        "id" : "00001", 
+        
         "firstName" : "Sanne ", 
         "lastName" : "Pietersma ",
         "gender" : "woman",
-        "age" : "21 years",
-        "sexuality" : "Bi-sexual"
+        "age" : 21,
+        "sexuality" : "Bi-sexual",
+        "email" : "sanne@gmail.com",
+        "password" : "asd123",
+        "hair" : "Blond"
     },
     {
-        "id" : "00002", 
+         
         "firstName" : "Lara ", 
         "lastName" : "Pietersma ",
         "gender" : "woman",
         "age" : "21 years",
-        "sexuality" : "Straight"
+        "sexuality" : "Straight",
+        "email" : "lara@gmail.com",
+        "password" : "asd123",
+        "hair" : "Red"
     },
     {
-        "id" : "00003", 
+        
         "firstName" : "Joep ", 
         "lastName" : "Pietersma ",
         "gender" : "men",
         "age" : "21 years",
-        "sexuality" : "Straight"
+        "sexuality" : "Straight",
+        "email" : "joep@gmail.com",
+        "password" : "asd123",
+        "hair" : "Brown"
     },
     {
-        "id" : "00004", 
+         
         "firstName" : "Sander ", 
         "lastName" : "Pietersma ",
         "gender" : "men",
         "age" : "21 years",
-        "sexuality" : "Gay"
+        "sexuality" : "Gay",
+        "email" : "sander@gmail.com",
+        "password" : "asd123",
+        "hair" : "Blond"
     },
     {
-        "id" : "00005", 
+         
         "firstName" : "Kaylee", 
         "lastName" : "Pietersma ",
         "gender" : "woman",
         "age" : "21 years",
-        "sexuality" : "Straight"
+        "sexuality" : "Straight",
+        "email" : "Kaylee@gmail.com",
+        "password" : "asd123",
+        "hair" : "Red"
     },
     {
-        "id" : "00006", 
+         
         "firstName" : "Merel", 
         "lastName" : "Pietersma ",
         "gender" : "woman",
         "age" : "21 years",
-        "sexuality" : "Bi-sexual"
+        "sexuality" : "Bi-sexual",
+        "email" : "merel@gmail.com",
+        "password" : "asd123",
+        "hair" : "Brown"
     },
     {
-        "id" : "00007", 
+        
         "firstName" : "Fien", 
         "lastName" : "Pietersma ",
         "gender" : "woman",
         "age" : "21 years",
-        "sexuality" : "Straight"
+        "sexuality" : "Straight",
+        "email" : "fien@gmail.com",
+        "password" : "asd123",
+        "hair" : "Black"
     },
     {
-        "id" : "00008", 
+         
         "firstName" : "Bob", 
         "lastName" : "Pietersma ",
         "gender" : "men",
         "age" : "21 years",
-        "sexuality" : "Gay"
+        "sexuality" : "Gay",
+        "email" : "bob@gmail.com",
+        "password" : "asd123",
+        "hair" : "Brown"
     },
     {
-        "id" : "00009", 
+        
         "firstName" : "Robby ", 
         "lastName" : "Pietersma ",
         "gender" : "men",
         "age" : "21 years",
-        "sexuality" : "Bi-sexual"
+        "sexuality" : "Bi-sexual",
+        "email" : "Robby@gmail.com",
+        "password" : "asd123",
+        "hair" : "Blond"
     },
     {
-        "id" : "00010", 
+        
         "firstName" : "Daniëlle", 
         "lastName" : "Pietersma ",
         "gender" : "woman",
         "age" : "21 years",
-        "sexuality" : "Gay"
+        "sexuality" : "Gay",
+        "email" : "danielle@gmail.com",
+        "password" : "asd123",
+        "hair" : "Brown"
     }
     
   ]
