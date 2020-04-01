@@ -11,7 +11,6 @@ const TWO_HOURS = 1000 * 60 * 60 * 2
 
 require('dotenv').config()
 
-
 // THIS IS THE CODE FOR THE CONNECTION WITH THE DATABASE
 let db = null
 let url = 'mongodb+srv://asd123:asd123@datingapp-ishqp.mongodb.net/test?retryWrites=true&w=majority'
@@ -26,7 +25,6 @@ mongo.MongoClient.connect(url, { useUnifiedTopology: true }, function(err, clien
 })
 
 // THIS IS WHERE THE CODE FOR THE DATABASE ENDS
-
 
 app.use('/static',express.static('static'))
 app.use(bodyParser.urlencoded({extended: true}))
@@ -57,10 +55,11 @@ app.post('/login', loginpost)
 function home(req,res){
     console.log(req.session)
     let { userId } = req.session
-    if(userId = null){
+    if(!userId){
         res.render('home.ejs')
     } else{
-        res.render('homeSecond.ejs')
+        res.redirect('/results')
+        console.log(req.session)
     }
     
 }
@@ -74,53 +73,55 @@ function login(req,res){
 }
 
 function loginpost(req,res){
-    const email = res.body.email
-    const password = res.body.password
+    const email = req.body.email
+    const password = req.body.password
+    console.log(email + password)
     if (email && password){
-        const user = db.collection('datingapp').find(user => user.email === email && user.password === password)
-        if (user){
-            req.session.userId = data._id
-            return res.redirect('/results')
-        }
-    }
-    res.redirect('/login')
+        db.collection('datingapp').findOne({email: email, password: password}, done)
+        function done(err, data){
+            if (err){
+                next(err)
+            }else {
+                req.session.userId = data
+                res.redirect('/results')
+        }}  
+    }  
 }
 
 
 function people(req, res, next){
-    db.collection('datingapp').find({}).toArray(done)
+    db.collection('datingapp').find({
+        $and: [  
+        {firstName:{$ne: req.session.userId.firstName}},
+        {gender: req.session.userId.filter['gender']}, 
+        {sexuality: req.session.userId.filter['sexuality']}
+    ]}).toArray(done)
         function done(err, data){
             if (err){
                 next(err)
             } else {
-                console.log(data);
+
                 res.render('index.ejs', {data: data})
             }
         }
 }
 
-function filter(req,res){
-    
-    let sexualityFilter = req.body.sexuality
-    let genderFilter = req.body.gender
 
-    db.collection('datingapp').find({gender: genderFilter, sexuality: sexualityFilter}).toArray(done)
+function filter(req, res){
+    db.collection('datingapp').updateOne(
+        {firstName: req.session.userId.firstName}, 
+        {$set: {filter: req.body}})
+        
+        
+        db.collection('datingapp').findOne({firstName: req.session.userId.firstName}, done)
         function done(err, data){
             if (err){
                 next(err)
-            } else {
-                console.log(data);
-                res.render('index.ejs', {data: data})
-            }
-        }
-     
+            }else {
+                req.session.userId = data
+                res.redirect('/results')
+            }}         
 }
-
-
-
-// function remove
-
-
 
 
 app.listen(port,() => console.log('Example app listening on port' + port))

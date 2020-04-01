@@ -15,6 +15,9 @@
         <h1> Results: </h1>
    
         <a href="/filter">Add filters</a>
+        <form method="POST" action="logout.ejs">
+          <button>Logout</button>
+        </form> 
       </div>
       <article id="allpeople">
     <% for (var index = 0; index < data.length; index++) { %>
