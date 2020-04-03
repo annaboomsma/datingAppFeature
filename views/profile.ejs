@@ -1,0 +1,53 @@
+<!doctype html>
+
+<link rel="stylesheet" href="/static/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+  <header>
+    <!-- <button id="backbutton" href="" ></button> -->
+    <img id="logo" src="../static/images/logo.png" alt="logo luvely">
+    
+  </header>
+  <main class="normalmain">
+      <article class="form">
+        <section class="link">
+            <h1>Profile</h1>
+            <form  method="POST" action="/logout">
+                <button class="buttonindex">Logout</button>
+            </form>
+        </section>
+      <section id="profile">
+        <img id="profileimg" src="../static/images/<%= data.image%> " alt="Profile picture of <%= data.Firstname%>">
+        <section class="profileinfo">
+            <h2> <%= data.firstName %> </h2>
+            <h3><%= data.lastName %></h3>
+
+            <ul>
+                <li> <%= data.email %> </li>
+                <li> <%= data.age %> years old</li>
+                <li> <%= data.gender %> </li>
+                <li> <%= data.sexuality %> </li>
+                <li> <%= data.hair %> hair </li>
+            </ul>
+        </section>
+    </section>
+      <form method="POST" action="/profile">
+        <fieldset>
+            <legend>Change your info:</legend>
+            <label class="profilelabel" for="hair">Hair color</label>
+            <input class="profileinput" type="text" name="hair" id="hair" placeholder=" <%= data.hair %> ">
+            
+        </fieldset>
+    </article>
+        <div class="submitButtonLogin">
+            <input class="next" type="submit" value="Change">
+        </div>
+      </form>
+
+      
+
+    
+
+  </main>
+</body>

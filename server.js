@@ -47,10 +47,13 @@ app.get('/', home)
 app.get('/results', people)
 app.get('/filter', filters)
 app.get('/login', login)
+app.get('/profile', profile)
 
 
 app.post('/results', filter)
 app.post('/login', loginpost)
+app.post('/logout', logoutpost)
+app.post('/profile', profilepost)
 
 function home(req,res){
     console.log(req.session)
@@ -64,12 +67,18 @@ function home(req,res){
     
 }
 
-function filters(req,res){
+function filters(req, res){
     res.render('filter.ejs')
 }
 
-function login(req,res){
+function login(req, res){
     res.render('login.ejs')
+}
+
+function profile(req, res){
+   res.render('profile.ejs', {data:req.session.userId})
+
+   
 }
 
 function loginpost(req,res){
@@ -86,6 +95,33 @@ function loginpost(req,res){
                 res.redirect('/results')
         }}  
     }  
+}
+
+function logoutpost(req,res){
+    req.session.destroy(err => {
+        if(err){
+            return res.redirect('/results')
+        } else {
+            res.clearCookie(process.env.SESS_NAME)
+            res.redirect('/')
+        }
+    })
+}
+
+function profilepost(req,res){
+ db.collection('datingapp').updateOne(
+        {firstName: req.session.userId.firstName}, 
+        {$set: {hair: req.body.hair}})
+        
+        
+        db.collection('datingapp').findOne({firstName: req.session.userId.firstName}, done)
+        function done(err, data){
+            if (err){
+                next(err)
+            }else {
+                req.session.userId = data
+                res.redirect('/profile')
+            }}         
 }
 
 
@@ -112,15 +148,15 @@ function filter(req, res){
         {firstName: req.session.userId.firstName}, 
         {$set: {filter: req.body}})
         
-        
-        db.collection('datingapp').findOne({firstName: req.session.userId.firstName}, done)
-        function done(err, data){
-            if (err){
-                next(err)
-            }else {
-                req.session.userId = data
-                res.redirect('/results')
-            }}         
+    db.collection('datingapp').findOne({firstName: req.session.userId.firstName}, done)
+    function done(err, data){
+        if (err){
+            next(err)
+        }else {
+            req.session.userId = data
+            res.redirect('/results')
+        }} 
+            
 }
 
 

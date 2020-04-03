@@ -7,29 +7,36 @@
   <header>
     <!-- <button id="backbutton" href="" ></button> -->
     <img id="logo" src="../static/images/logo.png" alt="logo luvely">
+    <a href="/profile"><img id="profilebutton" src="../static/images/profile.png" alt="profile luvely"></a>
+    
 
   </header>
   <main class="normalmain">
     <div class="form">
-      <div id="link">
+      <div class="link">
+
         <h1> Results: </h1>
-   
-        <a href="/filter">Add filters</a>
-        <form method="POST" action="logout.ejs">
-          <button>Logout</button>
-        </form> 
+
+        <a class="buttonindex" href="/filter">Add filters</a>
+        
       </div>
       <article id="allpeople">
     <% for (var index = 0; index < data.length; index++) { %>
-    
-        <article class="personTwee">
 
+        <article class="person">
+          <img src="../static/images/<%= data[index].image%> " alt="Profile picture of <%= data[index].Firstname%>">
+          <section class="info">
           <h2> <%= data[index].firstName %> </h2>
-          <p> <%= data[index].sexuality %> </p>
+          <section class="basics">
+          <p> <%= data[index].sexuality %> | </p>
+          <p> <%= data[index].age %> years old | </p>
+          <p> <%= data[index].hair %> hair </p>
+          </section>
+          </section>
         </article>
-        
-      
     <% } %>
     </article>
-</main> 
+   
+
+</main>
 </body>
