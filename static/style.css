@@ -64,10 +64,10 @@ header{
 }
 
 #profilebutton{
-    top: 0.2rem;
-    right: 0.2rem;
+    top: 1rem;
+    right: 1.5rem;
     position: absolute;
-    width: 2.3rem;
+    width: 1.5rem;
 }
 
 #elementone{
